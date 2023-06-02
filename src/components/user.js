@@ -12,8 +12,33 @@ class User extends React.Component {
     }
 
     componentDidMount() {
+        this.setState({planet: "Jupiter"});
         console.log("ComponentDidMount");//1.c
     }
+
+    shouldComponentUpdate(nextProp, nextState) {
+        console.log("shouldComponentUpdate");
+        console.log({
+            nextProp,
+            nextState
+        });
+        return true;
+    }
+
+    getSnapshotBeforeUpdate(prevProp, prevState) {
+        console.log("getSnapshotBeforeUpdate");
+        console.log({
+            prevProp,
+            prevState
+        });
+        return true;
+    }
+
+    componentDidUpdate(){
+        console.log(this.state);
+    }
+
+
 
     render() {//logic
         console.log("Render");//1.b

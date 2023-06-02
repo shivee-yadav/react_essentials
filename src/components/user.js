@@ -8,15 +8,15 @@ class User extends React.Component {
             planet: "Earth"
         };
 
-        console.log("constructor");
+        console.log("constructor");//1
     }
 
     componentDidMount() {
-        console.log("ComponentDidMount");
+        console.log("ComponentDidMount");//last
     }
 
     render() {//logic
-        console.log("Render");
+        console.log("Render");//2
         return (
             <div>
                 <h1>{this.props.name}</h1>

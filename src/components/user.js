@@ -8,15 +8,15 @@ class User extends React.Component {
             planet: "Earth"
         };
 
-        console.log("constructor");//1
+        console.log("constructor");//1.a
     }
 
     componentDidMount() {
-        console.log("ComponentDidMount");//last
+        console.log("ComponentDidMount");//1.c
     }
 
     render() {//logic
-        console.log("Render");//2
+        console.log("Render");//1.b
         return (
             <div>
                 <h1>{this.props.name}</h1>
@@ -32,11 +32,19 @@ export default User;
 
 //LIFE CYCLE METHODS
 //1.MOUNT -> The component is initially rendered in a DOM
-/* 1.a Constructor
+/* 
+   1.a Constructor
    1.b Render
    1.c ComponentDidMount<sideEffect>(get ecplore repos,activities)
 */
 //2.UPDATE ->Component is being updated
+/*
+  2.a Constructor
+  2.b shouldComponentUpdate(nextProp, nextState)//true or false value returned
+  2.c render()
+  2.d getSnapsotBeforeUpdate(prevProp, prevState)//returns true or false
+  2.e componentDidUpdate()
+ */
 //3.UNMOUNT -> Component is removed from the DOM
 
 

@@ -6,10 +6,14 @@ const User = (props) => {
     //the function to update the state
     const [planet, setPlanet] = useState("Earth");
 
-    useEffect(() => {
+    useEffect(() => {//componentDidMount
         setPlanet("Jupiter");
         console.log("Component Mounting");
     });
+
+    useEffect(() => {//componentDidUpdate
+        console.log("Planet Changes");
+    },[planet]);
 
     console.log(planet);
     return (

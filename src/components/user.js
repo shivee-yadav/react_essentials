@@ -6,21 +6,21 @@ const User = (props) => {
     //the function to update the state
     const [planet, setPlanet] = useState("Earth");
 
-    useEffect(() => {//componentDidMount
-        setPlanet("Jupiter");
+    useEffect(() => {//componentDidMount//for updating 
+        
         console.log("Component Mounting");
-    });
+    }, []);//again again  it will not come if it is updated
 
     useEffect(() => {//componentDidUpdate
         console.log("Planet Changes");
-    },[planet]);
+    }, [planet]);
 
     console.log(planet);
     return (
         <div>
             <h1>{props.name}</h1>
             <p>{props.description}</p>
-            <h1>{planet}</h1>
+            <button onClick={() => setPlanet("Pluto")}>{planet}</button>
         </div>
     );
 
